@@ -79,6 +79,11 @@ local capabilities = lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
 local lspconfig = require("lspconfig")
 
 if utils.executable('pylsp') then

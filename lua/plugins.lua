@@ -357,6 +357,11 @@ packer.startup({
     use { 'ii14/emmylua-nvim', ft = 'lua' }
 
     use { 'j-hui/fidget.nvim', after = 'nvim-lspconfig', config = [[require('config.fidget-nvim')]]}
+
+    -- quick fold
+    use {'kevinhwang91/nvim-ufo', after = 'nvim-lspconfig', config = [[require('config.nvim-ufo')]],
+      requires = 'kevinhwang91/promise-async'
+    }
   end,
   config = {
     max_jobs = 16,
